@@ -1,0 +1,24 @@
+{
+  "name": "ic3d_bridge",
+  "version": "0.1.0",
+  "description": "A modular and framework-agnostic TypeScript library for FiveM, providing seamless integration with QBCore, ESX, vRP (and OX in the future). Includes a bridge for essential functions like player management, jobs, inventory handling, and more.",
+  "author": "Rodrigo Lourenço <rodrigofplourenco2002@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc --build && node build.js"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@citizenfx/client": "^2.0.13890-1",
+    "@citizenfx/server": "^2.0.13890-1",
+    "@eslint/js": "^9.23.0",
+    "@types/node": "^22.13.14",
+    "esbuild": "^0.25.1",
+    "eslint": "^9.23.0",
+    "tsc-alias": "^1.8.13",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0"
+  }
+}
