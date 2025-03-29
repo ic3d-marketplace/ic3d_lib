@@ -12,6 +12,6 @@ A modular and framework-agnostic TypeScript library for **FiveM**, providing sea
 ## 📦 Installation  
 1. Clone the repository:  
 ```sh
-git clone https://github.com/yourusername/ic3d_lib.git
+git clone https://github.com/ic3d-marketplace/ic3d_lib.git
 cd ic3d_lib
 ```
