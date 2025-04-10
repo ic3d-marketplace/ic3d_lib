@@ -1,3 +1,22 @@
 import { detectFramework } from "./bridge/framework_detector";
 
-exports("getBridge", detectFramework);
+function getBridgeForLua() {
+  const framework: any = detectFramework();
+  if (!framework) return null;
+
+  const methodNames = Object.getOwnPropertyNames(
+    Object.getPrototypeOf(framework)
+  ).filter(
+    (key) => typeof framework[key] === "function" && key !== "constructor"
+  );
+
+  const luaBridge: Record<string, Function> = {};
+  for (const key of methodNames) {
+    luaBridge[key] = framework[key].bind(framework);
+  }
+
+  console.log("✅ Exposing bridge methods to Lua:", methodNames);
+  return luaBridge;
+}
+
+exports("getBridge", getBridgeForLua);

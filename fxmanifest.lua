@@ -7,13 +7,17 @@ description 'A modular FiveM bridge library'
 version '0.1.0'
 
 shared_scripts {
-  'dist/shared/main.js'
+  'dist/shared/main.js',
 }
 
 client_scripts {
-  'dist/client/main.js'
+  'dist/client/main.js',
 }
 
 server_scripts {
-  'dist/server/main.js'
+  'dist/server/main.js',
+}
+
+files {
+  'dist/**/*.js'
 }

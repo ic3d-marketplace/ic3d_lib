@@ -25,7 +25,10 @@ async function buildProject() {
     format: "esm",
     treeShaking: true,
     minify: false,
+    bundle: true,
     logLevel: "info",
+    platform: "neutral",
+    target: "esnext",
   };
 
   try {
