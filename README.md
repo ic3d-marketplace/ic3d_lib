@@ -17,3 +17,29 @@ cd ic3d_lib
 npm install
 npm run build
 ```
+2. Start the bridge before any resource that uses it
+
+## 📦 Example (Lua)
+```lua
+local bridge = exports.ic3d_lib:getBridge()
+
+RegisterCommand('getIdentifier', function(source)
+  print(bridge.getIdentifier(source))
+end, false)
+
+RegisterCommand('getFullName', function(source)
+  print(bridge.getFullName(source))
+end, false)
+
+RegisterCommand('getJob', function(source)
+  print(json.encode(bridge.getJob(source)))
+end, false)
+
+RegisterCommand('getCash', function(source)
+  print(bridge.getCash(source))
+end, false)
+
+RegisterCommand('addCash', function(source)
+  print(bridge.addCash(source, 99999))
+end, false)
+```
