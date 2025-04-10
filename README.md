@@ -1,10 +1,10 @@
 # ic3d_lib  
 
-A modular and framework-agnostic TypeScript library for **FiveM**, providing seamless integration with QBCore, ESX (and OX in the future). Includes a bridge for essential functions like player management, jobs, inventory handling, and more.
+A modular and framework-agnostic TypeScript library for **FiveM**, providing seamless integration with QBCore and ESX. Includes a bridge for essential functions like player management, jobs, inventory handling, and more.
 
 ## 🚀 Features  
-- ✅ **Supports multiple frameworks**: QBCore, ESX (OX planned).  
-- ✅ **Inventory system compatibility**: Works with Ox Inventory, QB Inventory, ESX Inventory, etc.  
+- ✅ **Supports multiple frameworks**: QBCore, ESX.  
+- ✅ **Inventory system compatibility**: Works with QB Inventory, ESX Inventory, etc.  
 - ✅ **Modular design**: Uses **interfaces, classes, and dependency injection** for flexibility.  
 - ✅ **Simple API**: Get players, jobs, inventories, and manage items with ease.  
 - ✅ **Future-proof**: Easily extendable for new frameworks and inventory systems.  
@@ -14,4 +14,6 @@ A modular and framework-agnostic TypeScript library for **FiveM**, providing sea
 ```sh
 git clone https://github.com/ic3d-marketplace/ic3d_lib.git
 cd ic3d_lib
+npm install
+npm run build
 ```
