@@ -15,7 +15,9 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "types": [
-      "@types/node"
+      "@types/node",
+      "@citizenfx/client",
+      "@citizenfx/server"
     ],
     "paths": {
       "@shared/*": [

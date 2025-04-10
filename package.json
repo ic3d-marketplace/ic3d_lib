@@ -10,9 +10,11 @@
     "build": "npm run clean && tsc --build && node build.js"
   },
   "keywords": [],
-  "devDependencies": {
+  "dependencies": {
     "@citizenfx/client": "^2.0.13890-1",
-    "@citizenfx/server": "^2.0.13890-1",
+    "@citizenfx/server": "^2.0.13890-1"
+  },
+  "devDependencies": {
     "@eslint/js": "^9.23.0",
     "@types/node": "^22.13.14",
     "esbuild": "^0.25.1",
