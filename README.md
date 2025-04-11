@@ -15,9 +15,9 @@ A modular and framework-agnostic TypeScript library for **FiveM**, providing sea
 
 ```sh
 git clone https://github.com/ic3d-marketplace/ic3d_lib.git
-cd ic3d_lib
+cd ic3d_lib 
 npm install
-npm run build
+npm run build # If you are using vRP, uncomment "-- '@vrp/lib/utils.lua'," lines on fxmanifest.lua
 ```
 
 2. Start the bridge before any resource that uses it
