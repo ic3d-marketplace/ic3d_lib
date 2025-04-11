@@ -1,20 +1,14 @@
+import { ParserUtils } from "@shared/utils/parser";
 import { detectTarget } from "./bridge/target_detector";
 
-function getBridgeForLua() {
-  const target: any = detectTarget();
-  if (!target) return null;
+function getClientLib() {
+  const lib: Record<string, any> = {};
 
-  const methodNames = Object.getOwnPropertyNames(
-    Object.getPrototypeOf(target)
-  ).filter((key) => typeof target[key] === "function" && key !== "constructor");
+  const target = detectTarget();
+  const targetModule = ParserUtils.createLuaModule(target, "target");
+  if (targetModule) lib.target = targetModule;
 
-  const luaBridge: Record<string, Function> = {};
-  for (const key of methodNames) {
-    luaBridge[key] = target[key].bind(target);
-  }
-
-  console.log("✅ Exposing client bridge methods to Lua:", methodNames);
-  return luaBridge;
+  return lib;
 }
 
-exports("getBridge", getBridgeForLua);
+exports("getLib", getClientLib);

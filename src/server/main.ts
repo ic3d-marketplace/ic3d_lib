@@ -1,22 +1,14 @@
+import { ParserUtils } from "@shared/utils/parser";
 import { detectFramework } from "./bridge/framework_detector";
 
-function getBridgeForLua() {
-  const framework: any = detectFramework();
-  if (!framework) return null;
+function getServerLib() {
+  const lib: Record<string, any> = {};
 
-  const methodNames = Object.getOwnPropertyNames(
-    Object.getPrototypeOf(framework)
-  ).filter(
-    (key) => typeof framework[key] === "function" && key !== "constructor"
-  );
+  const framework = detectFramework();
+  const frameworkModule = ParserUtils.createLuaModule(framework, "framework");
+  if (frameworkModule) lib.framework = frameworkModule;
 
-  const luaBridge: Record<string, Function> = {};
-  for (const key of methodNames) {
-    luaBridge[key] = framework[key].bind(framework);
-  }
-
-  console.log("✅ Exposing server bridge methods to Lua:", methodNames);
-  return luaBridge;
+  return lib;
 }
 
-exports("getBridge", getBridgeForLua);
+exports("getLib", getServerLib);

@@ -8,7 +8,7 @@ A modular and framework-agnostic TypeScript library for **FiveM**, providing sea
 - ✅ **Supports multiple targets**: OX Target, QB Target
 - ✅ **Modular design**: Uses **interfaces, classes, and dependency injection** for flexibility.
 - ✅ **Simple API**: Get players, jobs, inventories, and manage items with ease.
-- ✅ **Future-proof**: Easily extendable for new frameworks and inventory systems.
+- ✅ **Future-proof**: Easily extendable for new frameworks, inventory or other modules.
 
 ## 📦 Installation
 
@@ -26,25 +26,30 @@ npm run build # If you are using vRP, uncomment "-- '@vrp/lib/utils.lua'," lines
 ## 📦 Example (Lua)
 
 ```lua
-local bridge = exports.ic3d_lib:getBridge()
+local lib = exports.ic3d_lib:getLib()
 
+-- Server
 RegisterCommand('getIdentifier', function(source)
-  print(bridge.getIdentifier(source))
+  print(lib.framework.getIdentifier(source))
 end, false)
 
 RegisterCommand('getFullName', function(source)
-  print(bridge.getFullName(source))
+  print(lib.framework.getFullName(source))
 end, false)
 
 RegisterCommand('getJob', function(source)
-  print(json.encode(bridge.getJob(source)))
+  print(json.encode(lib.framework.getJob(source)))
 end, false)
 
 RegisterCommand('getCash', function(source)
-  print(bridge.getCash(source))
+  print(lib.framework.getCash(source))
 end, false)
 
 RegisterCommand('addCash', function(source)
-  print(bridge.addCash(source, 99999))
+  print(lib.framework.addCash(source, 99999))
 end, false)
+
+-- Client
+lib.target.addModelToTarget(model: any, data: ITargetOptions)
+lib.target.addCoordsToTarget(coords: any, data: ITargetOptions)
 ```
