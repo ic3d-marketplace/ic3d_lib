@@ -5,6 +5,7 @@ A modular and framework-agnostic TypeScript library for **FiveM**, providing sea
 ## 🚀 Features
 
 - ✅ **Supports multiple frameworks**: ESX, QBCore, QBOX and vRP
+- ✅ **Supports multiple targets**: OX Target, QB Target
 - ✅ **Modular design**: Uses **interfaces, classes, and dependency injection** for flexibility.
 - ✅ **Simple API**: Get players, jobs, inventories, and manage items with ease.
 - ✅ **Future-proof**: Easily extendable for new frameworks and inventory systems.

@@ -15,7 +15,7 @@ function getBridgeForLua() {
     luaBridge[key] = framework[key].bind(framework);
   }
 
-  console.log("✅ Exposing bridge methods to Lua:", methodNames);
+  console.log("✅ Exposing server bridge methods to Lua:", methodNames);
   return luaBridge;
 }
 
