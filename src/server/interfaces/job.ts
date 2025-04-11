@@ -1,6 +1,6 @@
 export interface IJob {
   name: string;
   label: string;
-  grade: number;
+  grade?: number;
   onDuty: boolean;
 }

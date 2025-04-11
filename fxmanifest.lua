@@ -11,10 +11,12 @@ shared_scripts {
 }
 
 client_scripts {
+  -- '@vrp/lib/utils.lua',
   'dist/client/main.js',
 }
 
 server_scripts {
+  -- '@vrp/lib/utils.lua',
   'dist/server/main.js',
 }
 

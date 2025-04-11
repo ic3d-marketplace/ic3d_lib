@@ -29,6 +29,7 @@ async function buildProject() {
     logLevel: "info",
     platform: "neutral",
     target: "esnext",
+    mainFields: ["module", "main"],
   };
 
   try {

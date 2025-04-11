@@ -4,7 +4,9 @@
     "composite": true,
     "types": [
       "@citizenfx/server",
-      "@citizenfx/client"
+      "@citizenfx/client",
+      "@vrpjs/client",
+      "@vrpjs/server"
     ]
   },
   "include": [

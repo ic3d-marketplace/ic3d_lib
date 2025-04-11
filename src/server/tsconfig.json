@@ -3,7 +3,8 @@
   "compilerOptions": {
     "composite": true,
     "types": [
-      "@citizenfx/server"
+      "@citizenfx/server",
+      "@vrpjs/server"
     ]
   },
   "include": [

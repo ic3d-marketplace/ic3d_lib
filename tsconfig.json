@@ -17,7 +17,9 @@
     "types": [
       "@types/node",
       "@citizenfx/client",
-      "@citizenfx/server"
+      "@citizenfx/server",
+      "@vrpjs/client",
+      "@vrpjs/server"
     ],
     "paths": {
       "@shared/*": [
