@@ -1,4 +1,4 @@
 export interface IFuel {
-  setFuel: (vehicleId: number, amount: number) => void;
-  getFuel: (vehicleId: number) => number;
+  setFuel: (vehicle: any, amount: number) => void;
+  getFuel: (vehicle: any) => number;
 }

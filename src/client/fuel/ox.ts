@@ -8,11 +8,11 @@ export class OXFuel implements IFuel {
     return GetResourceState("ox_fuel") == "started";
   }
 
-  setFuel(vehicleId: number, amount: number) {
-    Entity(vehicleId).state.fuel = amount;
+  setFuel(vehicle: number, amount: number) {
+    Entity(vehicle).state.fuel = amount;
   }
 
-  getFuel(vehicleId: number): number {
-    return Entity(vehicleId).state.fuel;
+  getFuel(vehicle: number): number {
+    return Entity(vehicle).state.fuel;
   }
 }

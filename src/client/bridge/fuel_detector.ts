@@ -1,7 +1,8 @@
+import { LegacyFuel } from "@client/fuel/legacy";
 import { OXFuel } from "@client/fuel/ox";
 import type { IFuel } from "@client/interfaces/fuel";
 
-const fuels = [OXFuel];
+const fuels = [OXFuel, LegacyFuel];
 
 export function detectFuel(): IFuel | null {
   for (const fuel of fuels) {
