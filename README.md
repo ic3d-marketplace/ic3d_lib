@@ -1,25 +1,29 @@
-# ic3d_lib  
+# ic3d_lib
 
-A modular and framework-agnostic TypeScript library for **FiveM**, providing seamless integration with QBCore and ESX. Includes a bridge for essential functions like player management, jobs, inventory handling, and more.
+A modular and framework-agnostic TypeScript library for **FiveM**, providing seamless integration with common frameworks. Includes a bridge for essential functions like player management, jobs, inventory handling, and more.
 
-## 🚀 Features  
-- ✅ **Supports multiple frameworks**: QBCore, ESX.  
-- ✅ **Inventory system compatibility**: Works with QB Inventory, ESX Inventory, etc.  
-- ✅ **Modular design**: Uses **interfaces, classes, and dependency injection** for flexibility.  
-- ✅ **Simple API**: Get players, jobs, inventories, and manage items with ease.  
-- ✅ **Future-proof**: Easily extendable for new frameworks and inventory systems.  
+## 🚀 Features
 
-## 📦 Installation  
-1. Clone the repository:  
+- ✅ **Supports multiple frameworks**: ESX, QBCore, QBOX and vRP
+- ✅ **Modular design**: Uses **interfaces, classes, and dependency injection** for flexibility.
+- ✅ **Simple API**: Get players, jobs, inventories, and manage items with ease.
+- ✅ **Future-proof**: Easily extendable for new frameworks and inventory systems.
+
+## 📦 Installation
+
+1. Clone the repository:
+
 ```sh
 git clone https://github.com/ic3d-marketplace/ic3d_lib.git
 cd ic3d_lib
 npm install
 npm run build
 ```
+
 2. Start the bridge before any resource that uses it
 
 ## 📦 Example (Lua)
+
 ```lua
 local bridge = exports.ic3d_lib:getBridge()
 
