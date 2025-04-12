@@ -49,7 +49,4 @@ RegisterCommand('addCash', function(source)
   print(lib.framework.addCash(source, 99999))
 end, false)
 
--- Client
-lib.target.addModelToTarget(model: any, data: ITargetOptions)
-lib.target.addCoordsToTarget(coords: any, data: ITargetOptions)
 ```
