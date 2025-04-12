@@ -1,4 +1,4 @@
-name: Release on Main Push
+name: Release on Main Push with Tagging
 
 on:
   push:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Required to create tags and check existing tags
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -44,6 +46,19 @@ jobs:
       - name: Get last commit message
         id: get_commit
         run: echo "msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+
+      - name: Create tag if it doesn't exist
+        run: |
+          VERSION="v${{ steps.get_version.outputs.version }}"
+          if git rev-parse "$VERSION" >/dev/null 2>&1; then
+            echo "Tag $VERSION already exists."
+          else
+            echo "Creating tag $VERSION..."
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git tag "$VERSION"
+            git push origin "$VERSION"
+          fi
 
       - name: Create GitHub release
         uses: ncipollo/release-action@v1.12.0
