@@ -1,7 +1,6 @@
 import type { IFuel } from "@client/interfaces/fuel";
 
 export class LegacyFuel implements IFuel {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private legacy: any = null;
 
   constructor() {

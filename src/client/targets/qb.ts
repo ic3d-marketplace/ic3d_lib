@@ -1,7 +1,6 @@
 import type { ITarget, ITargetOptions } from "@client/interfaces/target";
 
 export class QBTarget implements ITarget {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private QB: any = null;
 
   constructor() {

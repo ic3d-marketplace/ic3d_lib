@@ -2,7 +2,6 @@ import type { IFramework } from "@server/interfaces/framework";
 import type { IJob } from "@server/interfaces/job";
 
 export class QBCoreFramework implements IFramework {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private QB: any = null;
 
   constructor() {

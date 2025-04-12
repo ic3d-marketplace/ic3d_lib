@@ -1,7 +1,6 @@
 import type { IFuel } from "@client/interfaces/fuel";
 
 export class CDFuel implements IFuel {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private CD: any = null;
 
   constructor() {

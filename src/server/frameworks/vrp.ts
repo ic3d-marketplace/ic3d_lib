@@ -3,7 +3,6 @@ import type { IJob } from "@server/interfaces/job";
 import { VrpProxy } from "@vrpjs/server";
 
 export class VRPFramework implements IFramework {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private vRP: any = null;
 
   constructor() {

@@ -1,7 +1,6 @@
 import type { IFuel } from "@client/interfaces/fuel";
 
 export class NativeFuel implements IFuel {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor() {}
 
   static detect(): boolean {
