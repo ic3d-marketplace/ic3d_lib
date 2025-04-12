@@ -24,12 +24,18 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Prepare release folder
+        run: |
+          mkdir release
+          cp -r dist release/
+          cp fxmanifest.lua release/
+
       - name: Archive release
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
           filename: 'release.zip'
-          path: 'dist fxmanifest.lua'
+          path: 'release'
 
       - name: Get version from package.json
         id: get_version
