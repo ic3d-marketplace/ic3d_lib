@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -26,18 +26,18 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Prepare release folder
+      - name: Prepare release folder (named ic3d_lib)
         run: |
-          mkdir release
-          cp -r dist release/
-          cp fxmanifest.lua release/
+          mkdir ic3d_lib
+          cp -r dist ic3d_lib/
+          cp fxmanifest.lua ic3d_lib/
 
       - name: Archive release
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
-          filename: 'release.zip'
-          path: 'release'
+          filename: 'ic3d_lib.zip'
+          path: 'ic3d_lib'
 
       - name: Get version from package.json
         id: get_version
@@ -66,6 +66,6 @@ jobs:
           tag: "v${{ steps.get_version.outputs.version }}"
           name: "v${{ steps.get_version.outputs.version }}"
           body: ${{ steps.get_commit.outputs.msg }}
-          artifacts: release.zip
+          artifacts: ic3d_lib.zip
           token: ${{ secrets.GITHUB_TOKEN }}
           allowUpdates: true
