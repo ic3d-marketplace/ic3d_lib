@@ -16,20 +16,17 @@ export class QBTarget implements ITarget {
     model: any,
     { event, icon, label, handler }: ITargetOptions
   ) {
-    this.QB.AddTargetModel(
-      { model },
-      {
-        options: [
-          {
-            event,
-            icon,
-            label,
-            canInteract: handler,
-          },
-        ],
-        distance: 2.5,
-      }
-    );
+    this.QB.AddTargetModel([model], {
+      options: [
+        {
+          event,
+          icon,
+          label,
+          canInteract: handler,
+        },
+      ],
+      distance: 2.5,
+    });
   }
 
   addCoordsToTarget(
