@@ -8,6 +8,6 @@ export interface ITargetOptions {
 }
 
 export interface ITarget {
-  addModelToTarget: (model: any, data: ITargetOptions) => void;
+  addModelToTarget: (models: string | string[], data: ITargetOptions) => void;
   addCoordsToTarget: (coords: any, data: ITargetOptions) => void;
 }

@@ -13,10 +13,10 @@ export class QBTarget implements ITarget {
   }
 
   addModelToTarget(
-    model: any,
+    models: string | string[],
     { event, icon, label, handler }: ITargetOptions
   ) {
-    this.QB.AddTargetModel([model], {
+    this.QB.AddTargetModel(models, {
       options: [
         {
           event,

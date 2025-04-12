@@ -13,10 +13,10 @@ export class OXTarget implements ITarget {
   }
 
   addModelToTarget(
-    model: any,
+    models: string | string[],
     { name, event, icon, label, handler }: ITargetOptions
   ) {
-    this.OX.addModel(model, {
+    this.OX.addModel(models, {
       name,
       event,
       icon,
